@@ -82,3 +82,4 @@ cd environments/dev && terraform destroy -var="registry_password=YOUR_PASSWORD"
 cd environments/staging && terraform destroy -var="registry_password=YOUR_PASSWORD"
 cd environments/prod && terraform destroy -var="registry_password=YOUR_PASSWORD"
 ```
+# Azure Multi-Environment Terraform
