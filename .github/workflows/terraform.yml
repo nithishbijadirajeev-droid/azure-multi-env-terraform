@@ -53,10 +53,15 @@ jobs:
       working-directory: environments/dev
       run: |
         terraform init
-        terraform plan -var="registry_password=${{ secrets.REGISTRY_PASSWORD }}"
-        terraform apply -auto-approve -var="registry_password=${{ secrets.REGISTRY_PASSWORD }}"
-      env:
-        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+        terraform plan \
+          -var="client_id=${{ secrets.ARM_CLIENT_ID }}" \
+          -var="client_secret=${{ secrets.ARM_CLIENT_SECRET }}" \
+          -var="subscription_id=${{ secrets.ARM_SUBSCRIPTION_ID }}" \
+          -var="tenant_id=${{ secrets.ARM_TENANT_ID }}" \
+          -var="registry_password=${{ secrets.REGISTRY_PASSWORD }}"
+        terraform apply -auto-approve \
+          -var="client_id=${{ secrets.ARM_CLIENT_ID }}" \
+          -var="client_secret=${{ secrets.ARM_CLIENT_SECRET }}" \
+          -var="subscription_id=${{ secrets.ARM_SUBSCRIPTION_ID }}" \
+          -var="tenant_id=${{ secrets.ARM_TENANT_ID }}" \
+          -var="registry_password=${{ secrets.REGISTRY_PASSWORD }}"

@@ -1,19 +1,20 @@
 variable "location" {
-  description = "Azure region"
-  default     = "eastus"
+  default = "eastus"
 }
 
+variable "client_id" {}
+variable "client_secret" { sensitive = true }
+variable "subscription_id" {}
+variable "tenant_id" {}
+
 variable "registry_server" {
-  description = "Container registry server"
-  default     = "nithishealthmonitor.azurecr.io"
+  default = "nithishealthmonitor.azurecr.io"
 }
 
 variable "registry_username" {
-  description = "Container registry username"
-  default     = "nithishealthmonitor"
+  default = "nithishealthmonitor"
 }
 
 variable "registry_password" {
-  description = "Container registry password"
-  sensitive   = true
+  sensitive = true
 }
