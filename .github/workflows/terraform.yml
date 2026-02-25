@@ -49,11 +49,6 @@ jobs:
       with:
         terraform_version: 1.5.7
 
-    - name: Azure Login
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
     - name: Deploy Dev Environment
       working-directory: environments/dev
       run: |
