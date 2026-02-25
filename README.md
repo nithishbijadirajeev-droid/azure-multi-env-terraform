@@ -83,3 +83,4 @@ cd environments/staging && terraform destroy -var="registry_password=YOUR_PASSWO
 cd environments/prod && terraform destroy -var="registry_password=YOUR_PASSWORD"
 ```
 # Azure Multi-Environment Terraform
+# Redeploy with new app
